@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>杭州到吉利百矿出差行程指南</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E40AF',
+                        secondary: '#0EA5E9',
+                        accent: '#F59E0B',
+                        neutral: '#F3F4F6',
+                        dark: '#1F2937'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .card-hover {
+                @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+            }
+            .btn-primary {
+                @apply bg-primary hover:bg-primary/90 text-white font-medium py-2 px-4 rounded-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary/50;
+            }
+            .section-transition {
+                @apply transition-all duration-500 ease-in-out;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-dark font-sans">
+    <!-- 顶部导航栏 -->
+    <header class="bg-primary text-white shadow-md fixed w-full top-0 z-50 transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fa-solid fa-map-location-dot text-2xl"></i>
+                <h1 class="text-xl md:text-2xl font-bold tracking-tight">出差行程指南</h1>
+            </div>
+            <button class="md:hidden text-white focus:outline-none" id="menu-toggle">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+            <nav class="hidden md:flex items-center space-x-6">
+                <a href="#destination" class="hover:text-accent transition-colors duration-300">目的地</a>
+                <a href="#itinerary" class="hover:text-accent transition-colors duration-300">行程安排</a>
+                <a href="#transportation" class="hover:text-accent transition-colors duration-300">交通工具</a>
+                <a href="#accommodation" class="hover:text-accent transition-colors duration-300">住宿</a>
+                <a href="#contact" class="hover:text-accent transition-colors duration-300">联系方式</a>
+            </nav>
+        </div>
+        <!-- 移动端菜单 -->
+        <div class="md:hidden hidden bg-primary/95 backdrop-blur-sm absolute w-full" id="mobile-menu">
+            <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
+                <a href="#destination" class="py-2 hover:text-accent transition-colors duration-300">目的地</a>
+                <a href="#itinerary" class="py-2 hover:text-accent transition-colors duration-300">行程安排</a>
+                <a href="#transportation" class="py-2 hover:text-accent transition-colors duration-300">交通工具</a>
+                <a href="#accommodation" class="py-2 hover:text-accent transition-colors duration-300">住宿</a>
+                <a href="#contact" class="py-2 hover:text-accent transition-colors duration-300">联系方式</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主要内容 -->
+    <main class="container mx-auto px-4 pt-24 pb-16">
+        <!-- 行程概览 -->
+        <section class="mb-12 bg-white rounded-2xl shadow-lg overflow-hidden transform transition-all duration-500 hover:shadow-xl">
+            <div class="bg-gradient-to-r from-primary to-secondary p-6 md:p-8 text-white">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold mb-2 text-shadow">杭州 → 吉利百矿 出差行程</h2>
+                <p class="text-lg opacity-90">从杭州到广西百色的详细行程指南，助您旅途顺利</p>
+            </div>
+            <div class="p-6 md:p-8">
+                <div class="flex flex-col md:flex-row md:items-center justify-between mb-6">
+                    <div class="flex items-center mb-4 md:mb-0">
+                        <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mr-4">
+                            <i class="fa-solid fa-clock text-primary text-xl"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-500">总行程时间</p>
+                            <p class="text-2xl font-bold text-primary">8-10小时</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center mb-4 md:mb-0">
+                        <div class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center mr-4">
+                            <i class="fa-solid fa-map text-secondary text-xl"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-500">总行程距离</p>
+                            <p class="text-2xl font-bold text-secondary">约1500公里</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mr-4">
+                            <i class="fa-solid fa-plane text-accent text-xl"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-500">主要交通方式</p>
+                            <p class="text-2xl font-bold text-accent">飞机+高铁</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative h-1 bg-gray-200 rounded-full mb-8">
+                    <div class="absolute top-0 left-0 h-full bg-gradient-to-r from-primary via-secondary to-accent rounded-full" style="width: 75%"></div>
+                    <div class="absolute top-0 left-0 h-3 w-3 bg-primary rounded-full -mt-1 -ml-1 shadow-lg animate-pulse"></div>
+                    <div class="absolute top-0 left-[33%] h-3 w-3 bg-secondary rounded-full -mt-1 -ml-1 shadow-lg animate-pulse"></div>
+                    <div class="absolute top-0 left-[66%] h-3 w-3 bg-accent rounded-full -mt-1 -ml-1 shadow-lg animate-pulse"></div>
+                    <div class="absolute top-0 right-0 h-3 w-3 bg-gray-500 rounded-full -mt-1 -mr-1 shadow-lg"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 目的地信息 -->
+        <section id="destination" class="mb-12 section-transition">
+            <div class="flex items-center mb-6">
+                <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mr-4">
+                    <i class="fa-solid fa-building text-primary text-xl"></i>
+                </div>
+                <h2 class="text-2xl md:text-3xl font-bold">目的地信息</h2>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md p-6 mb-6 card-hover">
+                <h3 class="text-xl font-semibold mb-4 flex items-center">
+                    <i class="fa-solid fa-map-marker text-primary mr-2"></i>
+                    吉利百矿集团有限公司
+                </h3>
+                <p class="mb-4">广西百色市右江区永安大道1号</p>
+                <a href="https://amap.com/search?query=广西百色市右江区永安大道1号" target="_blank" class="btn-primary inline-flex items-center">
+                    <i class="fa-solid fa-map-location-dot mr-2"></i>
+                    在高德地图查看
+                </a>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md p-6 card-hover">
+                <h3 class="text-xl font-semibold mb-4 flex items-center">
+                    <i class="fa-solid fa-info-circle text-secondary mr-2"></i>
+                    行程总览
+                </h3>
+                <p>从杭州出发到达百色大致需要8-10个小时的路程时间，主要通过飞机和高铁换乘。</p>
+            </div>
+        </section>
+
+        <!-- 行程安排 -->
+        <section id="itinerary" class="mb-12 section-transition">
+            <div class="flex items-center mb-6">
+                <div class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center mr-4">
+                    <i class="fa-solid fa-calendar-check text-secondary text-xl"></i>
+                </div>
+                <h2 class="text-2xl md:text-3xl font-bold">行程安排</h2>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                <div class="border-b border-gray-200 px-6 py-4">
+                    <h3 class="text-xl font-semibold">详细行程</h3>
+                </div>
+
+                <div class="relative">
+                    <!-- 行程时间线 -->
+                    <div class="absolute left-6 top-0 bottom-0 w-0.5 bg-gray-200 transform -translate-x-1/2"></div>
+
+                    <!-- 行程步骤 -->
+                    <div class="p-6 relative">
+                        <div class="absolute left-6 top-6 w-4 h-4 bg-primary rounded-full transform -translate-x-1/2"></div>
+                        <div class="ml-12 mb-8">
+                            <div class="flex items-center mb-2">
+                                <span class="bg-primary/10 text-primary text-xs font-semibold px-2.5 py-0.5 rounded mr-2">步骤 1</span>
+                                <h4 class="text-lg font-semibold">杭州 → 南宁（吴圩机场）</h4>
+                            </div>
+                            <div class="flex flex-wrap gap-4">
+                                <div class="flex items-center">
+                                    <i class="fa-solid fa-plane-departure text-primary mr-2"></i>
+                                    <span>交通工具：飞机</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fa-solid fa-clock text-primary mr-2"></i>
+                                    <span>预计时间：3小时</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fa-solid fa-lightbulb text-accent mr-2"></i>
+                                    <span class="text-sm text-gray-600">最好是选上午早一点的航班</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="absolute left-6 top-[152px] w-4 h-4 bg-secondary rounded-full transform -translate-x-1/2"></div>
+                        <div class="ml-12 mb-8">
+                            <div class="flex items-center mb-2">
+                                <span class="bg-secondary/10 text-secondary text-xs font-semibold px-2.5 py-0.5 rounded mr-2">步骤 2</span>
+                                <h4 class="text-lg font-semibold">南宁（吴圩机场） → 南宁（或南宁东站）</h4>
+                            </div>
+                            <div class="flex flex-wrap gap-4">
+                                <div class="flex items-center">
+                                    <i class="fa-solid fa-train text-secondary mr-2"></i>
+                                    <span>交通工具：高铁或机场大巴</span>
+                                </div>
+                                <div class="flex flex-col">
+                                    <div class="flex items-center">
+                                        <i class="fa-solid fa-train-subway text-secondary mr-2"></i>
+                                        <span>高铁（16分钟）: 吴圩机场-南宁</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <i class="fa-solid fa-bus text-secondary mr-2"></i>
+                                        <span>机场大巴（1小时内）：机场门口坐到南宁东站</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fa-solid fa-lightbulb text-accent mr-2"></i>
+                                    <span class="text-sm text-gray-600">高铁：车次少，商旅订票上，修改出发地。机场大巴20元，记得隔天申请发票</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="absolute left-6 top-[296px] w-4 h-4 bg-accent rounded-full transform -translate-x-1/2"></div>
+                        <div class="ml-12 mb-8">
+                            <div class="flex items-center mb-2">
+                                <span class="bg-accent/10 text-accent text-xs font-semibold px-2.5 py-0.5 rounded mr-2">步骤 3</span>
+                                <h4 class="text-lg font-semibold">南宁（或南宁东） → 百色</h4>
+                            </div>
+                            <div class="flex flex-wrap gap-4">
+                                <div class="flex items-center">
+                                    <i class="fa-solid fa-train text-accent mr-2"></i>
+                                    <span>交通工具：高铁</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fa-solid fa-clock text-accent mr-2"></i>
+                                    <span>预计时间：2小时内</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="absolute left-6 top-[416px] w-4 h-4 bg-gray-500 rounded-full transform -translate-x-1/2"></div>
+                        <div class="ml-12">
+                            <div class="flex items-center mb-2">
+                                <span class="bg-gray-100 text-gray-700 text-xs font-semibold px-2.5 py-0.5 rounded mr-2">步骤 4</span>
+                                <h4 class="text-lg font-semibold">百色火车站 → 酒店</h4>
+                            </div>
+                            <div class="flex flex-wrap gap-4">
+                                <div class="flex items-center">
+                                    <i class="fa-solid fa-taxi text-gray-500 mr-2"></i>
+                                    <span>交通工具：出租车或其他出行工具都行</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fa-solid fa-clock text-gray-500 mr-2"></i>
+                                    <span>预计时间：30分钟内</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fa-solid fa-lightbulb text-accent mr-2"></i>
+                                    <span class="text-sm text-gray-600">商旅上使用接站出行就行，出站后左前方，马路对面等车</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 交通工具详情 -->
+        <section id="transportation" class="mb-12 section-transition">
+            <div class="flex items-center mb-6">
+                <div class="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mr-4">
+                    <i class="fa-solid fa-car text-accent text-xl"></i>
+                </div>
+                <h2 class="text-2xl md:text-3xl font-bold">交通工具详情</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <div class="bg-primary p-4 text-white">
+                        <h3 class="text-lg font-semibold flex items-center">
+                            <i class="fa-solid fa-plane mr-2"></i>
+                            飞机
+                        </h3>
+                    </div>
+                    <div class="p-4">
+                        <div class="mb-3 flex justify-between">
+                            <span class="text-gray-600">出发地</span>
+                            <span class="font-medium">杭州</span>
+                        </div>
+                        <div class="mb-3 flex justify-between">
+                            <span class="text-gray-600">目的地</span>
+                            <span class="font-medium">南宁（吴圩机场）</span>
+                        </div>
+                        <div class="mb-3 flex justify-between">
+                            <span class="text-gray-600">预计时间</span>
+                            <span class="font-medium">3小时</span>
+                        </div>
+                        <div class="mb-3 flex justify-between">
+                            <span class="text-gray-600">推荐航班</span>
+                            <span class="font-medium">上午早一点的航班</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <div class="bg-secondary p-4 text-white">
+                        <h3 class="text-lg font-semibold flex items-center">
+                            <i class="fa-solid fa-train mr-2"></i>
+                            高铁
+                        </h3>
+                    </div>
+                    <div class="p-4">
+                        <div class="mb-3 flex justify-between">
+                            <span class="text-gray-600">路线1</span>
+                            <span class="font-medium">吴圩机场-南宁</span>
+                        </div>
+                        <div class="mb-3 flex justify-between">
+                            <span class="text-gray-600">预计时间</span>
+                            <span class="font-medium">16分钟</span>
+                        </div>
+                        <div class="mb-3 flex justify-between">
+                            <span class="text-gray-600">路线2</span>
+                            <span class="font-medium">南宁（或南宁东）-百色</span>
+                        </div>
+                        <div class="mb-3 flex justify-between">
+                            <span class="text-gray-600">预计时间</span>
+                            <span class="font-medium">2小时内</span>
+                        </div>
+                        <div class="text-sm text-gray-600 italic">
+                            高铁车次较少，建议提前订票
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <div class="bg-accent p-4 text-white">
+                        <h3 class="text-lg font-semibold flex items-center">
+                            <i class="fa-solid fa-bus mr-2"></i>
+                            机场大巴
+                        </h3>
+                    </div>
+                    <div class="p-4">
+                        <div class="mb-3 flex justify-between">
+                            <span class="text-gray-600">路线</span>
+                            <span class="font-medium">南宁吴圩机场-南宁东站</span>
+                        </div>
+                        <div class="mb-3 flex justify-between">
+                            <span class="text-gray-600">预计时间</span>
+                            <span class="font-medium">1小时内</span>
+                        </div>
+                        <div class="mb-3 flex justify-between">
+                            <span class="text-gray-600">票价</span>
+                            <span class="font-medium">20元</span>
+                        </div>
+                        <div class="text-sm text-gray-600 italic">
+                            机场大巴可在机场门口乘坐，发票需隔天申请
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 住宿信息 -->
+        <section id="accommodation" class="mb-12 section-transition">
+            <div class="flex items-center mb-6">
+                <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mr-4">
+                    <i class="fa-solid fa-hotel text-primary text-xl"></i>
+                </div>
+                <h2 class="text-2xl md:text-3xl font-bold">住宿信息</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col card-hover">
+                    <div class="relative h-48">
+                        <img src="https://picsum.photos/600/400?random=1" alt="万达锦华酒店外观" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-lg px-3 py-1 shadow-md">
+                            <div class="flex items-center">
+                                <i class="fa-solid fa-star text-yellow-400 mr-1"></i>
+                                <span class="font-medium">4.7</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-grow">
+                        <h3 class="text-xl font-semibold mb-2">万达锦华酒店</h3>
+                        <div class="flex items-center mb-3">
+                            <i class="fa-solid fa-location-dot text-gray-500 mr-2"></i>
+                            <span>广西百色市右江区</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">位于市中心，交通便利，设施齐全，提供高品质住宿体验。</p>
+                    </div>
+                    <div class="p-4 border-t border-gray-100 bg-gray-50">
+                        <div class="flex justify-between items-center">
+                            <div class="text-sm text-gray-500">
+                                <i class="fa-solid fa-wifi mr-1"></i>
+                                <i class="fa-solid fa-parking mr-1"></i>
+                                <i class="fa-solid fa-swimming-pool mr-1"></i>
+                                <i class="fa-solid fa-utensils"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col card-hover">
+                    <div class="relative h-48">
+                        <img src="https://picsum.photos/600/400?random=2" alt="温德姆酒店外观" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-lg px-3 py-1 shadow-md">
+                            <div class="flex items-center">
+                                <i class="fa-solid fa-star text-yellow-400 mr-1"></i>
+                                <span class="font-medium">4.8</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-grow">
+                        <h3 class="text-xl font-semibold mb-2">温德姆酒店</h3>
+                        <div class="flex items-center mb-3">
+                            <i class="fa-solid fa-location-dot text-gray-500 mr-2"></i>
+                            <span>广西百色市右江区</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">国际连锁品牌，服务优质，环境舒适，适合商务出行。</p>
+                    </div>
+                    <div class="p-4 border-t border-gray-100 bg-gray-50">
+                        <div class="flex justify-between items-center">
+                            <div class="text-sm text-gray-500">
+                                <i class="fa-solid fa-wifi mr-1"></i>
+                                <i class="fa-solid fa-parking mr-1"></i>
+                                <i class="fa-solid fa-spa mr-1"></i>
+                                <i class="fa-solid fa-utensils"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-6 bg-white rounded-xl shadow-md p-6 card-hover">
+                <h3 class="text-xl font-semibold mb-4 flex items-center">
+                    <i class="fa-solid fa-info-circle text-secondary mr-2"></i>
+                    住宿选择说明
+                </h3>
+                <p>以上两家酒店均为推荐选择，你可以根据自己的爱好和预算进行选择。</p>
+                <p class="mt-2">从百色火车站到酒店约30分钟车程，可通过商旅平台使用接站服务，出站后左前方，马路对面等车。</p>
+            </div>
+        </section>
+
+        <!-- 联系方式 -->
+        <section id="contact" class="mb-12 section-transition">
+            <div class="flex items-center mb-6">
+                <div class="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center mr-4">
+                    <i class="fa-solid fa-phone text-gray-700 text-xl"></i>
+                </div>
+                <h2 class="text-2xl md:text-3xl font-bold">联系方式</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white rounded-xl shadow-md p-6 flex items-start card-hover">
+                    <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mr-4 flex-shrink-0">
+                        <i class="fa-solid fa-user text-primary text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-1">贺松芳</h3>
+                        <p class="text-gray-600 mb-3">主要联系人</p>
+                        <div class="flex items-center mb-2">
+                            <i class="fa-solid fa-phone text-gray-500 mr-2"></i>
+                            <a href="tel:13858516800" class="text-primary hover:underline">13858516800</a>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fa-solid fa-envelope text-gray-500 mr-2"></i>
+                            <a href="mailto:hesongfang@example.com" class="text-primary hover:underline"></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md p-6 flex items-start card-hover">
+                    <div class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center mr-4 flex-shrink-0">
+                        <i class="fa-solid fa-user-tie text-secondary text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-1">李霞</h3>
+                        <p class="text-gray-600 mb-3">百矿财务副部长</p>
+                        <div class="flex items-center mb-2">
+                            <i class="fa-solid fa-phone text-gray-500 mr-2"></i>
+                            <a href="tel:13877681435" class="text-primary hover:underline">13877681435</a>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fa-solid fa-envelope text-gray-500 mr-2"></i>
+                            <a href="mailto:lixia@baikuang.com" class="text-primary hover:underline">lixia@baikuang.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-6 bg-white rounded-xl shadow-md p-6 card-hover">
+                <h3 class="text-xl font-semibold mb-4 flex items-center">
+                    <i class="fa-solid fa-info-circle text-accent mr-2"></i>
+                    紧急联系说明
+                </h3>
+                <p>在出差过程中如有任何问题可以直接联系贺松芳。如果联系不上，可以致电百矿财务副部长李霞。</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">出差行程指南</h3>
+                    <p class="text-gray-400">为您提供从杭州到吉利百矿的详细出差行程安排，祝您旅途愉快！</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">快速链接</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#destination" class="text-gray-400 hover:text-white transition-colors duration-300">目的地</a></li>
+                        <li><a href="#itinerary" class="text-gray-400 hover:text-white transition-colors duration-300">行程安排</a></li>
+                        <li><a href="#transportation" class="text-gray-400 hover:text-white transition-colors duration-300">交通工具</a></li>
+                        <li><a href="#accommodation" class="text-gray-400 hover:text-white transition-colors duration-300">住宿信息</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors duration-300">联系方式</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">联系我们</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fa-solid fa-map-marker-alt text-gray-400 mr-2 w-5"></i>
+                            <span class="text-gray-400">广西百色市右江区永安大道1号</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa-solid fa-phone text-gray-400 mr-2 w-5"></i>
+                            <a href="tel:13858516800" class="text-gray-400 hover:text-white transition-colors duration-300">13858516800</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa-solid fa-envelope text-gray-400 mr-2 w-5"></i>
+                            <a href="mailto:info@example.com" class="text-gray-400 hover:text-white transition-colors duration-300">songfang.he@geely.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500">
+                <p>&copy; 2025 出差行程指南 | 科技集团财务数字化</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 导航栏滚动效果
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 10) {
+                navbar.classList.add('py-2', 'bg-primary/95', 'backdrop-blur-sm', 'shadow-lg');
+                navbar.classList.remove('py-3', 'bg-primary');
+            } else {
+                navbar.classList.add('py-3', 'bg-primary');
+                navbar.classList.remove('py-2', 'bg-primary/95', 'backdrop-blur-sm', 'shadow-lg');
+            }
+        });
+        
+        // 移动端菜单切换
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // 如果是移动端，点击后关闭菜单
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+        
+        // 滚动动画
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-8');
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        document.querySelectorAll('.section-transition').forEach(section => {
+            section.classList.add('opacity-0', 'translate-y-8', 'transition-all', 'duration-700');
+            observer.observe(section);
+        });
+    </script>
+</body>
+
+</html>
